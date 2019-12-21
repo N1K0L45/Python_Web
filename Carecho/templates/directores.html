@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+<h1>Directores Registrados</h1>
+  <form class="form-inline mr-auto" role="form" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button class="btn btn-sm btn-primary" type="submit">Buscar</button>
+  </form>
+
+<br>
+
+<div class="" style="padding-left:15px;padding-right:150px">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Fecha de Nacimiento</th>
+        <th scope="col">Nacionalidad</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for d in directors %}
+      <tr>
+        <th scope="row">{{d.id}}</th>
+        <td>{{d.nombre}}</td>
+        <td>{{d.birth}}</td>
+        <td>{{d.nacion}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="row" style="padding-left:50px">
+    <a href="/home">Volver</a>
+</div>
+
+{% endblock %}

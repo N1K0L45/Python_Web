@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<body class="text-center">
+  <div class="col-md-1">
+    <h1>Hola</h1>
+  </div>
+  
+  <div class="container">
+<form action="." role="form" method="POST">
+  {% csrf_token %}
+
+  <input type="hidden" name="cerrar" value="logout">
+  <center><button class="btn btn-lg btn-primary btn-block" type="submit">Cerrar Sesión</button></center>
+</form>
+</div>
+</body>
+
+{% endblock %}

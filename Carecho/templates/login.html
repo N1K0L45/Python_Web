@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<br>
+<body class="text-center">
+  <div class="container">
+
+    <form class="form-signin" role="form" method="post">
+      <h1 class="h3 mb-3 font-weight-normal">Iniciar Sesión</h1>
+
+      <label for="inputUser" class="sr-only">Usuario</label>
+      <input name="username" type="text" id="inputUser" class="form-control" placeholder="Usuario" required="" autofocus="">
+
+      <label for="inputPassword" class="sr-only">Contraseña</label>
+      <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="">
+
+      <br>
+      {% csrf_token %}
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+    </form>
+
+      {% if error %}
+        <br>
+        <p style="color:red">Usuario y/o contraseña inválidos</p>
+      {% endif %}
+
+  </div>
+</body>
+{% endblock %}

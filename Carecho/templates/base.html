@@ -1,0 +1,45 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Careccio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  	<link rel="stylesheet" type="text/css" href="{% static 'estilo.css' %}">
+  </head>
+<body>
+  <nav class="navbar navbar-expand navbar-dark bg-primary">
+  <a class="navbar-brand" href="/">Careccio</a>
+
+  <div class="collapse navbar-collapse" id="navbarsExample02">
+    <ul class="navbar-nav mr-auto">
+      {% if okey %}
+      <li class="nav-item">
+        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      {% endif %}
+      <li class="nav-item">
+        <a class="nav-link" href="/idem">Descripción</a>
+      </li>
+    </ul>
+  </div>
+  {% if okey %}
+	<span class="navbar-text">
+		<a class="nav-link">Hola {{ user.username }}</a>
+	</span>
+	|
+	<span class="navbar-text">
+    <form action="." role="form" method="POST">
+      {% csrf_token %}
+
+      <input type="hidden" name="cerrar" value="logout">
+      <button class="btn btn-md btn-primary btn-block" type="submit">Cerrar Sesión</button>
+    </form>
+  </span>
+	{% endif %}
+</nav>
+  {% block content %}
+  {% endblock %}
+</body>
+</html>

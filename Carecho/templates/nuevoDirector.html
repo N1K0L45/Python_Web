@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+<h1>Ingresar Nuevo Director</h1>
+<form class="form-inline mr-auto" role="form" method="POST">
+  {% csrf_token %}
+  <table>
+    {{ form.as_table }}
+  <tr>
+    <td><button class="btn btn-sm btn-primary" type="submit">Ingresar</button></td>
+  </tr>
+
+  </table>
+
+</form>
+<br>
+
+<div class="row" style="padding-left:50px">
+    <a href="/home">Volver</a>
+
+</div>
+
+{% endblock %}

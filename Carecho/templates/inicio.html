@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+	{% block content %}
+	<br>
+	<main role="main">
+
+	<div class="jumbotron">
+		<div class="row">
+		<div class="col-md-6">
+			<div class="container">
+				<h1 class="display-3">Bienvenido a {{ appName }}</h1>
+				<p>Un sistema hecho por {{ autor }}</p>
+
+				<div class="row">
+					<div class="col-sm-6">
+						<p><a class="btn btn-primary btn-lg" href="/login" role="button">Entrar »</a></p>
+					</div>
+
+					<div class="col-sm-6" style="padding-top: 12px;">
+						<a href="/idem">Descripción</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+<div class="col-md-6">
+	<center><img src="/media/logo.jpg" width="425"></center>
+</div>
+
+	</div>
+</div>
+
+</main>
+	{% endblock %}

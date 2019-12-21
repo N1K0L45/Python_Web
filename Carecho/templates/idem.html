@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<br>
+  <div id="idemm" class="idemm">
+    <h3>Descripción de la página</h3>
+    <p>Esta página pretende ser un futuro sistema de inventariado, implementado
+      bajo una arquitectura orientada a microservicios
+      que se comunican entre sí.
+    </p>
+
+    <p>
+      Idealmente, se hará inventario de películas (o de cualquier
+      otra cosa a convenir, da igual), a modo de crear un ejemplo
+      de una página funcional usando el framework Django.
+    </p>
+
+    <p>
+      Actualmente, la página es sólo un bosquejo con pocas rutas, donde se pueden
+      apreciar la forma y estructura de las vistas.
+    </p>
+
+    <p>
+      Puedes probar pulsando el logo, <a href="/home">home</a>, <a href="/idem">descripción</a>
+       (redirecciona aquí mismo),
+       o en <a href="/login">ingresa</a>, situados también en la barra de navegación.
+    </p>
+    <br>
+    <p style="text-align:right; font-style:italic; padding-right:200px">
+      Nicolás 'Carecho' Acevedo
+    </p>
+  </div>
+  <footer class="footer mt-auto py-3">
+    <div class="container">
+      <span><a href="/">Volver al principio</a></span>
+    </div>
+  </footer>
+
+{% endblock %}
